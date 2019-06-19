@@ -66,13 +66,13 @@ $fast-in-slow-out: cubic-bezier(0.25, 0.8, 0.5, 1);
     }
 
     &-enter {
-      .modal {
+      .vmp {
         transform: translateY($translate-distance);
       }
     }
 
     &-leave-to {
-      .modal {
+      .vmp {
         transform: translateY(-$translate-distance);
       }
     }
@@ -82,7 +82,7 @@ $fast-in-slow-out: cubic-bezier(0.25, 0.8, 0.5, 1);
       transition: $transition-duration $fast-in-slow-out;
 
       // this works properly because duration is same for both
-      .modal {
+      .vmp {
         transition: $transition-duration $fast-in-slow-out;
       }
     }
