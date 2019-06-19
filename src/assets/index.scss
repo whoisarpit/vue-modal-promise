@@ -1,0 +1,90 @@
+$overlay-bg: rgba(black, 0.8);
+
+$close-btn-size: 24px;
+$close-btn-bg: #fff;
+$close-btn-bg--hover: #ddd;
+$close-btn-shadow-color: rgba(0,0,0,0.4);
+$close-btn-color: #333;
+
+$translate-distance: 30px;
+$transition-duration: 0.3s;
+$fast-in-slow-out: cubic-bezier(0.25, 0.8, 0.5, 1);
+
+.vmp {
+  position: relative;
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $overlay-bg;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__close-btn {
+    position: absolute;
+    z-index: 20;
+    text-align: center;
+    right: -$close-btn-size / 2;
+    top: -$close-btn-size / 2;
+    width: $close-btn-size;
+    height: $close-btn-size;
+    border-radius: $close-btn-size / 2;
+    font-size: $close-btn-size - 4px;
+    line-height: $close-btn-size;
+    background-color: $close-btn-bg;
+    box-shadow: 0px 0px 2px 1px $close-btn-shadow-color;
+    transition: $transition-duration background-color $fast-in-slow-out;
+
+    &,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      color: $close-btn-color;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $close-btn-bg--hover;
+    }
+  }
+
+  &__app {
+    z-index: 20;
+  }
+
+  &__transition {
+
+    &-enter,
+    &-leave-to {
+      opacity: 0;
+    }
+
+    &-enter {
+      .modal {
+        transform: translateY($translate-distance);
+      }
+    }
+
+    &-leave-to {
+      .modal {
+        transform: translateY(-$translate-distance);
+      }
+    }
+
+    &-enter-active,
+    &-leave-active {
+      transition: $transition-duration $fast-in-slow-out;
+
+      // this works properly because duration is same for both
+      .modal {
+        transition: $transition-duration $fast-in-slow-out;
+      }
+    }
+  }
+}
