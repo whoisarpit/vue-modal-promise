@@ -111,3 +111,7 @@ npm run build
 ```
 npm run lint
 ```
+
+## License
+
+[MIT](https://github.com/arpit9295/vue-weekly-schedule/blob/master/LICENSE.md)

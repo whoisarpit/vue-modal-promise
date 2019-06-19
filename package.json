@@ -7,11 +7,12 @@
     "email": "arpit9295@gmail.com",
     "url": "https://github.com/arpit9295"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "scripts": {
     "demo": "vue-cli-service serve demo/main.js",
     "build": "vue-cli-service build --target lib src/index.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepublish": "npm run lint && npm run build"
   },
   "dependencies": {
     "core-js": "^2.6.5",
