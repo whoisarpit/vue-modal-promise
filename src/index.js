@@ -1,7 +1,7 @@
 import './assets/index.scss';
 import ModalContainer from './components/ModalContainer.vue';
 
-const version = '0.1.0';
+const version = '0.2.0';
 
 const install = (Vue) => {
   function getContainer(root) {
