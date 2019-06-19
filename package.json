@@ -1,7 +1,12 @@
 {
   "name": "vue-modal-promise",
   "version": "0.2.0",
-  "private": true,
+  "author": {
+    "name": "Arpit Roopchandani",
+    "email": "arpit9295@gmail.com",
+    "url": "https://github.com/arpit9295"
+  },
+  "license": "GPL-3.0",
   "scripts": {
     "demo": "vue-cli-service serve demo/main.js",
     "build": "vue-cli-service build --target lib src/index.js",
@@ -22,5 +27,15 @@
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "files": [
+    "dist/vue-modal-promise.common.js",
+    "dist/vue-modal-promise.umd.min.js",
+    "dist/vue-modal-promise.umd.js",
+    "src"
+  ],
+  "main": "dist/vue-modal-promise.common.js",
+  "unpkg": "dist/vue-modal-promise.umd.min.js",
+  "jsdelivr": "dist/vue-modal-promise.umd.min.js",
+  "sideeffects": false
 }
