@@ -1,5 +1,5 @@
-# vue-modal-promise
-
+# Vue Modal Promise
+[![npm](https://img.shields.io/npm/v/vue-modal-promise.svg)](https://www.npmjs.com/package/vue-modal-promise) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 ## Project setup
 ```
 npm install
