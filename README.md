@@ -35,11 +35,6 @@ const response = await this.$showModal({
 });
 ```
 
-To close the modal, inside the component, emit the event `'close'` -
-```js
-this.$emit('close', response);
-```
-
 ### As a Component
 
 In the app template -
@@ -86,6 +81,34 @@ export default {
 
 Where you can emit the event `'showModal'` anywhere from a component which will bubble to the app,
 and invoke this event listener.
+
+## Component features
+
+### Programmatically closing the modal from inside the component
+
+To close the modal, inside the component, emit the event `'close'` -
+```js
+this.$emit('close', response);
+```
+
+### Closure Guard
+
+Closure guard (`beforeModalClose`) is called before
+
+```js
+  methods: {
+    ...
+  },
+  beforeModalClose(close) {
+    if (!this.isDataUnsaved) {
+      close(true);
+    } else {
+      window.alert('Please save the data before closing the modal');
+    }
+  },
+  created() {
+    ...
+```
 
 ## Development
 

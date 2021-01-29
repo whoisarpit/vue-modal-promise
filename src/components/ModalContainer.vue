@@ -2,15 +2,15 @@
   <div class="vmp__app">
     <transition-group name="vmp__transition">
       <div class="vmp__overlay"
-        v-for="modal in modals"
+        v-for="(modal, index) in modals"
         :key="modal.id"
         @close="modal.close">
         <div class="vmp">
           <a href="javascript:;" class="vmp__close-btn"
-            @click.prevent="modal.dismiss()">
+            @click.prevent="closeModal(index)">
             &#x2715;
           </a>
-          <component
+          <component ref="modals"
             @close="modal.close"
             @dismiss="modal.dismiss"
             :is="modal.component"
@@ -68,6 +68,18 @@
 
 
         return promise;
+      },
+
+      async closeModal(index) {
+        if (this.$refs.modals[index].$options.beforeModalClose) {
+          const self = this;
+          const currentRef = this.$refs.modals[index];
+          currentRef.$options.beforeModalClose.call(currentRef, (returnVal) => {
+            self.modals[index].close(returnVal);
+          });
+        } else {
+          this.modals[index].close();
+        }
       },
     },
 
