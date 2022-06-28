@@ -1,6 +1,6 @@
 {
   "name": "vue-modal-promise",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A bare minimum library to open a promisified modal inside the current app.",
   "author": {
     "name": "Arpit Roopchandani",
