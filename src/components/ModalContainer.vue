@@ -6,7 +6,8 @@
         :key="modal.id"
         @close="modal.close">
         <div class="vmp">
-          <a href="javascript:;" class="vmp__close-btn"
+          <a href="javascript:;"
+            class="vmp__close-btn"
             @click.prevent="closeModal(index)">
             &#x2715;
           </a>
@@ -21,6 +22,8 @@
   </div>
 </template>
 <script>
+  const openClass = 'vmp__root--modal-open';
+
   export default {
     data() {
       return {
@@ -42,7 +45,7 @@
 
         newModal.destroy = () => {
           newModal.showModal = false;
-          this.modals = this.modals.filter(currModal => currModal !== newModal);
+          this.modals = this.modals.filter((currModal) => currModal !== newModal);
         };
 
         // TODO: Add error handling everywhere and reject
@@ -66,6 +69,9 @@
 
         this.modals.push(newModal);
 
+        if (this.modals.length === 1) {
+          this.$root.$el.classList.add(openClass);
+        }
 
         return promise;
       },
@@ -79,6 +85,9 @@
           });
         } else {
           this.modals[index].close();
+        }
+        if (index === 0) {
+          this.$root.$el.classList.remove(openClass);
         }
       },
     },

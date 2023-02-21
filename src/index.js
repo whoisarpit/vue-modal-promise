@@ -13,7 +13,7 @@ const install = (Vue) => {
 
       new Vue({
         parent: root,
-        render: h => h(ModalContainer),
+        render: (h) => h(ModalContainer),
       }).$mount(modalContainerEl);
     }
 
