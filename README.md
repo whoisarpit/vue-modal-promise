@@ -3,6 +3,8 @@
 
 A bare minimum library to open a promisified modal inside the current app.
 
+Testing
+
 ## Installation
 
 ```bash
